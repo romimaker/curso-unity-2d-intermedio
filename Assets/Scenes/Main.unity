@@ -852,7 +852,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -10
   m_Sprite: {fileID: -7697518126443209966, guid: c4838c1a71bbce64a876a31bdfa683b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1161,6 +1161,7 @@ GameObject:
   - component: {fileID: 2004213624}
   - component: {fileID: 2004213623}
   - component: {fileID: 2004213622}
+  - component: {fileID: 2004213625}
   m_Layer: 0
   m_Name: Planes_12
   m_TagString: Untagged
@@ -1252,6 +1253,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2004213625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004213621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbded6fa0af14064abee2845acc8403f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7107418794842211477
 PrefabInstance:
   m_ObjectHideFlags: 0
