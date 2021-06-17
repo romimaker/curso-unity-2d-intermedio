@@ -156,7 +156,7 @@ AreaEffector2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_UseGlobalAngle: 0
-  m_ForceAngle: 45
+  m_ForceAngle: 135
   m_ForceMagnitude: 1
   m_ForceVariation: 0.1
   m_ForceTarget: 0
