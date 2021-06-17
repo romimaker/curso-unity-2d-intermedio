@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    delegate void SimpleMessage();
-    SimpleMessage simpleMessage;
+    public delegate void PlayerDeath();
+    public static event PlayerDeath OnPlayerDeath;
 
-    private void Start()
+    public GameObject GameOverScreen;
+
+    private void Awake()
     {
-        simpleMessage += SendConsoleMessage;
-        simpleMessage?.Invoke();
+        GameOverScreen.SetActive(false);
+        OnPlayerDeath += ShowGameOverScreen;
     }
 
-    private void SendConsoleMessage()
+    private void ShowGameOverScreen()
     {
-        Debug.Log("Mensaje Enviado a consola");
+        GameOverScreen.SetActive(true);
     }
+
+    public void PlayerKilled()
+    {
+        OnPlayerDeath?.Invoke();
+    }
+
 }
