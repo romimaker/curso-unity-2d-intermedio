@@ -29,6 +29,11 @@ public class PlayerController : MonoBehaviour
         movementY = movementVector.y;
     }
 
+    private void OnFire()
+    {
+        SoundManager.instance.PlayShoot();
+    }
+
     private void FixedUpdate()
     {
         rb.rotation -= movementX * rotSpeed;
