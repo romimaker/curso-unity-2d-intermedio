@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +8,13 @@ public class GameManager : MonoBehaviour
     public static event PlayerDeath OnPlayerDeath;
 
     public GameObject GameOverScreen;
+
+    public static Action OnUpdateScore;
+
+    private void OnEnable()
+    {
+        OnUpdateScore += UpdateScoreUI;
+    }
 
     private void Awake()
     {
@@ -23,6 +30,12 @@ public class GameManager : MonoBehaviour
     public void PlayerKilled()
     {
         OnPlayerDeath?.Invoke();
+    }
+
+    public void UpdateScoreUI()
+    {
+        //CAmbiar el valor del score en la UI
+        Debug.Log("Score acualizado");
     }
 
 }

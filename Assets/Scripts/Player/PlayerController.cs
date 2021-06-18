@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
         SoundManager.instance.PlayShoot();
         GameObject go = ObjectPooler.instance.GetPoolObject("Bullet");
         go.transform.position = transform.position;
+        go.transform.rotation = transform.rotation;
         go.SetActive(true);
     }
 

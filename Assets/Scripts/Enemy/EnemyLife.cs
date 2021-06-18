@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class EnemyLife : MonoBehaviour
 {
+    private void OnEnable()
+    {
+        GameManager.OnUpdateScore += Deactivate;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnUpdateScore.Invoke();
+        GameManager.OnUpdateScore -= Deactivate;   
+    }
+
     public GameObject explosion;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -11,7 +22,19 @@ public class EnemyLife : MonoBehaviour
         {
             GameObject go = Instantiate(explosion);
             go.transform.position = transform.position;
-            Destroy(gameObject);
+            Deactivate();
         }
+
+        if (collision.CompareTag("Bullet"))
+        {
+            Deactivate();
+            //Desactivarlo y agregarlo a la lista del oject pool
+        }
+    }
+
+    private void Deactivate()
+    {
+        //destroy
+        gameObject.SetActive(false);
     }
 }
