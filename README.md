@@ -1,1 +1,1 @@
-# curso-unity-2d-avanzado
+# curso-unity-2d-intermedio
